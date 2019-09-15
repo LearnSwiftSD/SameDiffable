@@ -1,0 +1,83 @@
+//
+//  Color.swift
+//  CombineColors
+//
+//  Created by Stephen Martinez on 8/17/19.
+//  Copyright © 2019 Stephen Martinez. All rights reserved.
+//
+
+import Foundation
+
+struct Color {
+    
+    static func toHex(colorValue: Int) -> String {
+        hexConvert(colorValue)
+    }
+    
+    static func toDecimal(colorValue: Float) -> Int {
+        Int(colorValue * 255)
+    }
+    
+    static func toFloat(colorValue: Int) -> Float {
+        Float(colorValue) / 255
+    }
+    
+    private static func hexConvert(_ num: Int) -> String {
+        String(format:"%02X" ,num)
+    }
+    
+}
+
+extension Color {
+    
+    /// A simple struct for passing Color Values around
+    struct Values: Equatable {
+
+        @Clamping var red: Int
+        @Clamping var green: Int
+        @Clamping var blue: Int
+        
+        init(red: Int, green: Int, blue: Int) {
+            self._red = Clamping(wrappedValue: red, 0...255)
+            self._green = Clamping(wrappedValue: green, 0...255)
+            self._blue = Clamping(wrappedValue: blue, 0...255)
+        }
+
+        init(red: Float, green: Float, blue: Float) {
+            self._red = Clamping(wrappedValue: toDecimal(colorValue: red), 0...255)
+            self._green = Clamping(wrappedValue: toDecimal(colorValue: green), 0...255)
+            self._blue = Clamping(wrappedValue: toDecimal(colorValue: blue), 0...255)
+        }
+        
+        var float: FloatValues {
+            return FloatValues(
+                red: toFloat(colorValue: red),
+                green: toFloat(colorValue: green),
+                blue: toFloat(colorValue: blue)
+            )
+        }
+        
+        var hex: String {
+            let hexR = toHex(colorValue: red)
+            let hexG = toHex(colorValue: green)
+            let hexB = toHex(colorValue: blue)
+            return hexR + hexG + hexB
+        }
+        
+        static func == (lhs: Color.Values, rhs: Color.Values) -> Bool {
+            lhs.red == rhs.red && lhs.green == rhs.green && lhs.blue == rhs.blue
+        }
+        
+    }
+    
+}
+
+extension Color.Values {
+    
+    struct FloatValues {
+        @UnitInterval var red: Float
+        @UnitInterval var green: Float
+        @UnitInterval var blue: Float
+    }
+    
+}
