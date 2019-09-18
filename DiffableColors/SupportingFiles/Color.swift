@@ -31,11 +31,17 @@ struct Color {
 extension Color {
     
     /// A simple struct for passing Color Values around
-    struct Values: Equatable {
+    struct Values: Equatable, Codable {
 
         @Clamping var red: Int
         @Clamping var green: Int
         @Clamping var blue: Int
+        
+        enum CodingKeys: String, CodingKey {
+            case red
+            case green
+            case blue
+        }
         
         init(red: Int, green: Int, blue: Int) {
             self._red = Clamping(wrappedValue: red, 0...255)
@@ -47,6 +53,23 @@ extension Color {
             self._red = Clamping(wrappedValue: toDecimal(colorValue: red), 0...255)
             self._green = Clamping(wrappedValue: toDecimal(colorValue: green), 0...255)
             self._blue = Clamping(wrappedValue: toDecimal(colorValue: blue), 0...255)
+        }
+        
+        init(from decoder: Decoder) throws {
+            let values = try decoder.container(keyedBy: CodingKeys.self)
+            let decodedRed = try values.decode(Int.self, forKey: .red)
+            let decodedGreen = try values.decode(Int.self, forKey: .green)
+            let decodedBlue = try values.decode(Int.self, forKey: .blue)
+            self._red = Clamping(wrappedValue: decodedRed, 0...255)
+            self._green = Clamping(wrappedValue: decodedGreen, 0...255)
+            self._blue = Clamping(wrappedValue: decodedBlue, 0...255)
+        }
+        
+        func encode(to encoder: Encoder) throws {
+            var container = encoder.container(keyedBy: CodingKeys.self)
+            try container.encode(red, forKey: .red)
+            try container.encode(green, forKey: .green)
+            try container.encode(blue, forKey: .blue)
         }
         
         var float: FloatValues {
