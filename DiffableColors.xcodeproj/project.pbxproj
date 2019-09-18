@@ -21,7 +21,7 @@
 		4868DA30232DCAA2003FAE67 /* ColorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4868DA2F232DCAA2003FAE67 /* ColorController.swift */; };
 		4868DA33232DCAC2003FAE67 /* Combinable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4868DA32232DCAC2003FAE67 /* Combinable.swift */; };
 		4868DA35232DCAC8003FAE67 /* CombinableExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4868DA34232DCAC8003FAE67 /* CombinableExtensions.swift */; };
-		4868DA37232DCD86003FAE67 /* InAppMemory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4868DA36232DCD86003FAE67 /* InAppMemory.swift */; };
+		4868DA37232DCD86003FAE67 /* AppMemory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4868DA36232DCD86003FAE67 /* AppMemory.swift */; };
 		4868DA3B232DD0C1003FAE67 /* ColorSaveController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4868DA3A232DD0C1003FAE67 /* ColorSaveController.swift */; };
 		4868DA3D232DD10B003FAE67 /* ColorEditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4868DA3C232DD10B003FAE67 /* ColorEditController.swift */; };
 		4868DA3F232DD43D003FAE67 /* FavColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4868DA3E232DD43D003FAE67 /* FavColor.swift */; };
@@ -46,7 +46,7 @@
 		4868DA2F232DCAA2003FAE67 /* ColorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorController.swift; sourceTree = "<group>"; };
 		4868DA32232DCAC2003FAE67 /* Combinable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Combinable.swift; sourceTree = "<group>"; };
 		4868DA34232DCAC8003FAE67 /* CombinableExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombinableExtensions.swift; sourceTree = "<group>"; };
-		4868DA36232DCD86003FAE67 /* InAppMemory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppMemory.swift; sourceTree = "<group>"; };
+		4868DA36232DCD86003FAE67 /* AppMemory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMemory.swift; sourceTree = "<group>"; };
 		4868DA3A232DD0C1003FAE67 /* ColorSaveController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSaveController.swift; sourceTree = "<group>"; };
 		4868DA3C232DD10B003FAE67 /* ColorEditController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorEditController.swift; sourceTree = "<group>"; };
 		4868DA3E232DD43D003FAE67 /* FavColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavColor.swift; sourceTree = "<group>"; };
@@ -115,7 +115,7 @@
 				4868DA26232DCA4B003FAE67 /* Fonts.swift */,
 				4868DA28232DCA50003FAE67 /* PropertyWrappers.swift */,
 				4868DA2A232DCA56003FAE67 /* TextFieldHandler.swift */,
-				4868DA36232DCD86003FAE67 /* InAppMemory.swift */,
+				4868DA36232DCD86003FAE67 /* AppMemory.swift */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -231,7 +231,7 @@
 				4868DA27232DCA4B003FAE67 /* Fonts.swift in Sources */,
 				4868DA42232DDACE003FAE67 /* ColorFavCell.swift in Sources */,
 				4868DA25232DCA3E003FAE67 /* Color.swift in Sources */,
-				4868DA37232DCD86003FAE67 /* InAppMemory.swift in Sources */,
+				4868DA37232DCD86003FAE67 /* AppMemory.swift in Sources */,
 				4868DA0E232DC94C003FAE67 /* AppDelegate.swift in Sources */,
 				4868DA10232DC94C003FAE67 /* SceneDelegate.swift in Sources */,
 				4840D198232DE04F00989A20 /* ColorFavsController.swift in Sources */,

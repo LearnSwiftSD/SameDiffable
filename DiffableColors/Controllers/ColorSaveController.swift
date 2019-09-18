@@ -27,7 +27,7 @@ class ColorSaveController: ColorController {
                 blue: blueSlider.value),
             name: nameField.text
         )
-        InAppMemory.shared.save(color: color)
+        AppMemory.shared.save(color: color)
         navigationController?.popViewController(animated: true)
     }
     

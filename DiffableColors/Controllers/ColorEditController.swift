@@ -54,13 +54,13 @@ class ColorEditController: ColorController {
         
         newFav.color = newColor
         newFav.name = nameField.text
-        InAppMemory.shared.update(color: newFav)
+        AppMemory.shared.update(color: newFav)
     }
     
     @IBAction func deleteColor(_ sender: Any) {
         defer { navigationController?.popViewController(animated: true) }
         guard let existingFav = existingFav else { return }
-        InAppMemory.shared.delete(color: existingFav)
+        AppMemory.shared.delete(color: existingFav)
     }
     
     override func setUpStyle() {
